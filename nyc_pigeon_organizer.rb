@@ -4,13 +4,14 @@ def nyc_pigeon_organizer(data)
   data.each do |col_gen_liv, data_hash|
     data_hash.each do |nested_hash, name_array|
       name_array.each do |name|  # don't need the key, value pair cs it's just an array now!
+        binding.pry
         if !new[name] # if that key doens't exist
           new[name] = {} # create it and have it point to a new hash
         end
         if !new[name][col_gen_liv] # the col_gen_liv => nested_hash that u want to be your key's value now
           new[name][col_gen_liv] = []
         end
-        new[name][col_gen_liv] << nested_hash.to_s 
+        new[name][col_gen_liv] << nested_hash.to_s
       end
     end
   end
